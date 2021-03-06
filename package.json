@@ -1,0 +1,22 @@
+{
+  "name": "bhmi-apis",
+  "version": "1.0.0",
+  "description": "BHMI APIS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/berzebub/bhmi-apis.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/berzebub/bhmi-apis/issues"
+  },
+  "homepage": "https://github.com/berzebub/bhmi-apis#readme",
+  "dependencies": {
+    "firebase-admin": "^9.5.0"
+  }
+}
