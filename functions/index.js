@@ -21,6 +21,28 @@ app.use((req, res, next) => {
   next();
 });
 
+app.post("/login", (req, res) => {
+  const username = req.body.username;
+  const password = req.body.password;
+
+  db.collection("CESD_Accounts")
+    .where("username", "==", username)
+    .where("password", "==", password)
+    .get()
+    .then((doc) => {
+      if (doc.size) {
+        const uid = doc.docs[0].id;
+        admin
+          .auth()
+          .createCustomToken(uid)
+          .then((customToken) => {
+            res.send(customToken);
+          });
+      } else {
+        res.send("error");
+      }
+    });
+});
 
 // ****************************************************************
-exports.bhmsApis = functions.https.onRequest(app);
+exports.bhms = functions.https.onRequest(app);
